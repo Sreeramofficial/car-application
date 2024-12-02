@@ -1,0 +1,13 @@
+<!-- ng serve :run application -->
+<!-- ngFor="let item of items; index as i"
+ ngIf="items.length == 0; then noitems; else showitems
+ ng-template #showitems
+
+   [(ngModel)]="listFilter" to synch ts and html file vriales
+
+   ng generate component wish-list  //to create new componet
+ 
+ 
+ 
+ -->
+<h4></h4>

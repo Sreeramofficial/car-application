@@ -1,0 +1,71 @@
+<div class="container">
+  <nav style="margin-bottom: 20px" class="navbar d-flex justify-content-center">
+    <span>Welcome to {{ account }} Task manager</span>
+  </nav>
+
+  <!-- if statement to show values -->
+  <div *ngIf="filteredWish.length == 0; then noitems; else showitems"></div>
+  <!-- <div *ngIf="items.length == 0; else showitems">
+    no items present //we can also wite like this
+  </div> -->
+
+  <!-- to show based on deciion -->
+  <ng-template #noitems>
+    <h4>There is no items in your wish!!</h4>
+  </ng-template>
+  <!-- to show based on deciion -->
+  <ng-template #showitems>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">SI NO</th>
+            <th scope="col">Target</th>
+            <th scope="col">isComplete</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of filteredWish; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.wishText }}</td>
+            <td>{{ item.isComplete }}</td>
+            <td>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  [checked]="item.isComplete"
+                  (click)="toggleItem(item)"
+                />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+  <p
+    style="
+      background-color: rgb(0, 91, 170);
+      padding: 10px;
+      color: rgb(255, 255, 255);
+    "
+    class="h6"
+  >
+    FILTER WISHES
+  </p>
+
+  <select
+    class="form-select"
+    aria-label="Default select example"
+    [(ngModel)]="listFilter"
+  >
+    <option value="0">All</option>
+    <option value="1">Completed</option>
+    <option value="2">Penidng</option>
+  </select>
+
+  <wish-form (addNewWish)="items.push($event)"></wish-form>
+</div>
+<footer-wish [links]="links"></footer-wish>

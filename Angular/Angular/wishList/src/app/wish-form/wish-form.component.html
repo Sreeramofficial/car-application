@@ -1,0 +1,51 @@
+<div
+  style="background-color: rgb(0, 91, 170); margin-top: 20px"
+  class="container"
+>
+  <form style="padding: 20px">
+    <div class="form-group">
+      <div class="form-group">
+        <label
+          style="margin-bottom: 20px; color: white"
+          for="exampleInputEmail1"
+        >
+          Next Target
+        </label>
+      </div>
+
+      <input
+        type="TEXT"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter Target "
+        [(ngModel)]="newTarget"
+        name="wish-list"
+      />
+      <small id="emailHelp" style="color: white"
+        >We'll never share your details with anyone else.</small
+      >
+    </div>
+
+    <div style="padding: 20px" class="form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="exampleCheck1"
+        [(ngModel)]="newTargetStatus"
+        name="input-toggle"
+      />
+      <label style="color: white" class="form-check-label" for="exampleCheck1"
+        >Is complete</label
+      >
+    </div>
+    <button
+      style="background-color: rgb(0, 91, 170)"
+      type="submit"
+      class="btn btn-primary"
+      (click)="$event.preventDefault(); addWish()"
+    >
+      Submit
+    </button>
+  </form>
+</div>

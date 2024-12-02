@@ -1,0 +1,131 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.image-section {
+  flex: 1;
+  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.login-container {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Adjust as needed */
+  text-align: center;
+}
+
+.header-text {
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin: 20px 0 10px;
+  color: #343a40;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #6c757d;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #495057;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.footer-text {
+  margin-top: 20px;
+  color: #6c757d;
+}
+
+.footer-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+.error-message {
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0); /* Default error color */
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px; /* Optional: Add padding for better spacing */
+}
+
+/* Optionally, add different styles for specific error types */
+.error-message.success {
+  background-color: rgb(76, 175, 80); /* Green for success */
+}
+
+.error-message.warning {
+  background-color: rgb(255, 193, 7); /* Yellow for warnings */
+}
+.login-box {
+  border-radius: 22px;
+  text-decoration: double;
+  color: #0056b3;
+}
+.buttonOp {
+  opacity: 1;
+}
+.buttonOpWithout {
+  opacity: 0.1;
+}

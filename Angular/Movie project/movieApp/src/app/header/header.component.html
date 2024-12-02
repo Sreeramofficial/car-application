@@ -1,0 +1,37 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h4
+        class="navbar-brand"
+        class="lemon-regular"
+        style="color: aliceblue"
+        href="#"
+      >
+        Crick<span style="color: yellow">P</span>ulse<br />
+        <h6>
+          <span class="ranga-regular"
+            >Your favourite
+            <span style="color: aqua">cricket</span> partner</span
+          >
+        </h6>
+      </h4>
+      <br />
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a (click)="goToHome()"
+          ><span class="glyphicon glyphicon-user"></span>&nbsp;{{
+            nextPage.main
+          }}
+        </a>
+      </li>
+      <li>
+        <a (click)="logout()"
+          ><span class="glyphicon glyphicon-log-in"></span> &nbsp;
+          {{ nextPage.second }}</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

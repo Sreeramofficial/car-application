@@ -1,0 +1,113 @@
+<!-- if statement to show values -->
+<div *ngIf="filteredWish.length == 0; then noitems; else showitems"></div>
+<!-- <div *ngIf="items.length == 0; else showitems">
+    no items present //we can also wite like this
+  </div> -->
+
+<!-- to show based on deciion -->
+<ng-template #noitems>
+  <h4>There is no items in your wish!!</h4>
+</ng-template>
+<!-- to show based on deciion -->
+<ng-template #showitems>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">SI NO</th>
+          <th scope="col">Target</th>
+          <th scope="col">isComplete</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of filteredWish; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.wishText }}</td>
+          <td>{{ item.isComplete }}</td>
+          <td>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                [checked]="item.isComplete"
+                (click)="toggleItem(item)"
+              />
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
+<p
+  style="
+    background-color: rgb(0, 91, 170);
+    padding: 10px;
+    color: rgb(255, 255, 255);
+  "
+  class="h6"
+>
+  FILTER WISHES
+</p>
+
+<select
+  class="form-select"
+  aria-label="Default select example"
+  [(ngModel)]="listFilter"
+>
+  <option value="0">All</option>
+  <option value="1">Completed</option>
+  <option value="2">Penidng</option>
+</select>
+<div
+  style="background-color: rgb(0, 91, 170); margin-top: 20px"
+  class="container"
+>
+  <form style="padding: 20px">
+    <div class="form-group">
+      <div class="form-group">
+        <label
+          style="margin-bottom: 20px; color: white"
+          for="exampleInputEmail1"
+        >
+          Next Target
+        </label>
+      </div>
+
+      <input
+        type="TEXT"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter Target "
+        [(ngModel)]="newTarget"
+        name="wish-list"
+      />
+      <small id="emailHelp" style="color: white"
+        >We'll never share your details with anyone else.</small
+      >
+    </div>
+
+    <div style="padding: 20px" class="form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="exampleCheck1"
+        [(ngModel)]="newTargetStatus"
+        name="input-toggle"
+      />
+      <label style="color: white" class="form-check-label" for="exampleCheck1"
+        >Is complete</label
+      >
+    </div>
+    <button
+      style="background-color: rgb(0, 91, 170)"
+      type="submit"
+      class="btn btn-primary"
+      (click)="$event.preventDefault(); addWish()"
+    >
+      Submit
+    </button>
+  </form>
+</div>

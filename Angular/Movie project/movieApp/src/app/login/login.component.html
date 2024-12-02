@@ -1,0 +1,114 @@
+<app-header [nextPage]="nextPage"></app-header>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div style="min-height: 500px" class="card">
+      <div class="card-body">
+        <h5 class="card-title">HELLO WORLD!!!</h5>
+        <p class="card-text">
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          With supporting text below as a natural lead-in to additional content.
+          gfg fg . With supporting text below as a natural lead-in to additional
+          content. With supporting text below as a natural lead-in to additional
+          content.
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div
+        class="card-body"
+        style="
+          min-height: 600px;
+          background-image: url('https://img.freepik.com/free-vector/cricket-championship-with-ball-wicket-with-helmet-cricket-stadium-freehand-sketch-graphic-design-vector-illustration_460848-11912.jpg?semt=ais_siglip');
+        "
+      >
+        <div class="container">
+          <div class="login-box">
+            <h2>Welcome Back!</h2>
+            <p>Lets Toss the coin to start the Game!</p>
+            <form action="/login" method="POST">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input
+                  type="text"
+                  id="userName"
+                  name="userName"
+                  required
+                  placeholder="Enter your username"
+                  [(ngModel)]="userName"
+                  (input)="validateInput($event, 'userName')"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  required
+                  placeholder="Enter your password"
+                  [(ngModel)]="password"
+                  (input)="validateInput($event, 'passWord')"
+                />
+              </div>
+              <button
+                [ngClass]="noopacity"
+                (mouseenter)="showButton($event)"
+                (mouseleave)="leaveButton($event)"
+                type="submit"
+                (click)="login()"
+              >
+                Login
+              </button>
+
+              <div [ngClass]="errorClass" *ngIf="error">
+                {{ error }}
+              </div>
+            </form>
+            <p class="footer-text" style="color: black">
+              Don't have an <br />account?
+              <a href="/register">
+                <br />
+                Sign up here</a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

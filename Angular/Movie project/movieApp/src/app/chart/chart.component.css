@@ -1,0 +1,9 @@
+.footer-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the buttons */
+}
+
+.footer-buttons button {
+  margin: 0.5rem; /* Space between buttons */
+}
